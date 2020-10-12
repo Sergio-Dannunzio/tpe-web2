@@ -28,10 +28,11 @@ class usuarioController{
     function iniciarSesion(){
         $usuario = $_POST['input_nombre'];
         $password = $_POST['input_password'];
+        $access = $_POST['input_access'];
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $this->model->agregarUsuario($usuario, $hash);
+        $this->model->agregarUsuario($usuario, $hash, $access);
         $this->view->showHomeLocation();
     }
 

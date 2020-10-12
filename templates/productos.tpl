@@ -9,7 +9,7 @@
         </tr>
 </table>
 
- <div class="spa">
+
 <table class="table">
 
 
@@ -42,7 +42,7 @@
     {/foreach}
   
 </table>
- </div>
+
 
 {include file='templates/footer.tpl'}
 

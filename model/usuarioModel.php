@@ -9,9 +9,9 @@ class usuarioModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db;charset=utf8', 'root', '');
     }
 
-    function agregarUsuario($nombre, $password){
-        $sentencia = $this->db->prepare("INSERT INTO usuario( nombre, password) VALUES (?, ?)");
-        $sentencia->execute(array($nombre, $password));
+    function agregarUsuario($nombre, $password, $access){
+        $sentencia = $this->db->prepare("INSERT INTO usuario( nombre, password, access) VALUES (?, ?, ?)");
+        $sentencia->execute(array($nombre, $password, $access));
     }
 
     function getUser($usuario){

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 templates_c/*.php
+=======
+templates_c/*
+>>>>>>> 160c5be2b3cf7cd2064c0801e9c081860b8d0b9c

@@ -35,7 +35,7 @@ class categoriaView{
         }
 
         function showEdit($categoria,$logged){
-            $this->smarty->assign('titulo', "editar categoria");
+            $this->smarty->assign('titulo', "Editar categoria:");
             $this->smarty->assign('logged', $logged);
             $this->smarty->assign('categoria', $categoria);
             $this->smarty->display("templates/editCategoria.tpl");

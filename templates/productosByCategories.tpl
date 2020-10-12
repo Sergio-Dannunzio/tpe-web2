@@ -1,16 +1,17 @@
 
 {include file='templates/header.tpl'}
 
-<h1>{$titulo}</h1>
+<h1 class="text-center">{$titulo}</h1>
 
 
-<table>
-
-    <tr>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Precio</th>
-    </tr>
+<table class="table">
+    <thead  class="thead-dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+        </tr>
+    </thead>
 {foreach from=$categoria item=categories} 
     <tr>
         <td>{$categories->nombre}</td>

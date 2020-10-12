@@ -2,19 +2,21 @@
 {include file="templates/header.tpl"}
 
 {*EDITAR*}
-    <h1>{$titulo}</h1>
+<div class="text-center">
+    <h1 class="text-center">{$titulo}</h1>
     <form action="editarProducto/{$producto->id_producto}" method="POST">
+         <div>
+            <label for="input_edit_nombre" >Nombre:</label>
+            <input class="form-control" name="input_edit_nombre" {$producto->nombre}>
+        </div>
+            <label for="input_edit_descripcion">Descripcion:</label>
+            <input class="form-control"  name="input_edit_descripcion" {$producto->descripcion} >
+        <div>   
+             <label for="input_edit_precio">Precio:</label>
+            <input class="form-control" name="input_edit_precio"  {$producto->precio}>
+        </div>  
         <div>
-            <label for="input_edit_nombre" >Nombre</label>
-            <input name="input_edit_nombre" {$producto->nombre}>
-
-            <label for="input_edit_descripcion">Descripcion</label>
-            <input   name="input_edit_descripcion" {$producto->descripcion} >
-            
-             <label for="input_edit_precio">Precio</label>
-            <input  name="input_edit_precio"  {$producto->precio}>
-            
-            <label for="categoriaUpdate">Categoria</label>
+            <label for="categoriaUpdate">Categoria:</label>
            <select name="categoriaUpdate"> 
                 <option value="">Elegir</option>
 
@@ -23,10 +25,11 @@
                 {/foreach}
 
             </select>
-  
-            <button type="submit">EDITAR PRODUCTO</button>
         </div>
+       
+            <button  class="btn btn-light" type="submit">Editar</button>
+    
     </form>
-
+</div >
 
    {include file="templates/footer.tpl"}

@@ -68,7 +68,7 @@ class productosView{
     }
 
     function showEditProductos($producto,$categoria,$logged){
-        $this->smarty->assign('titulo', "editar producto");
+        $this->smarty->assign('titulo', "Editar producto:");
         $this->smarty->assign('logged', $logged);
         $this->smarty->assign('producto', $producto);
         $this->smarty->assign('categoria', $categoria);
