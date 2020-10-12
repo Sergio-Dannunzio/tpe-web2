@@ -1,1 +1,1 @@
-C:\xampp\htdocs\Practico1\TP_ESPECIAL\templates_c
+templates_c
