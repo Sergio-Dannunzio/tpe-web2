@@ -28,7 +28,7 @@ class categoriaView{
     
 
         function renderCategorias($categoria,$logged){
-            $this->smarty->assign('titulo', "Categorias");
+            $this->smarty->assign('titulo', "Tabla de categorias");
             $this->smarty->assign('categoria', $categoria);
             $this->smarty->assign('logged', $logged);
             $this->smarty->display('templates/categoriaAdmin.tpl');

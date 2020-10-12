@@ -2,22 +2,27 @@
 
 {include file='templates/header.tpl'}
 
-<div>
-    <h1>{$titulo}</h1>
-      <form action="registrarse" method="POST">
-        <div>
 
-          <label for="">Nombre: </label>
-            <input type="text" name="input_nombre">
-          <label for="">Contraseña: </label>
-            <input type="password" name="input_password">
-        </div>
-
-        <div>
-
-          <button>Iniciar sesion</button>
-        </div>
-      </form>
+<div class="spa">
+    <form class="formulario" action="registrarse" method="POST">
+      <h1>{$titulo}</h1>
+        <ul class="formulario-ul">
+          <li>
+            <label for="">Nombre: </label>
+            <input class="form-control" type="text" name="input_nombre">
+          </li>
+          <li>
+            <label for="">Contraseña: </label>
+            <input class="form-control" type="password" name="input_password">
+          </li>
+          <li>
+            <input type="radio" name="access" value="1"> <label for="">Acepto terminos y condiciones</label>
+          </li>
+          <li>
+            <button class="btn btn-primary">Iniciar sesion</button>
+          </li>
+      </ul>    
+    </form>
 </div>
 
 

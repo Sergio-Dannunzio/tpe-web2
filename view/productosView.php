@@ -14,7 +14,7 @@ class productosView{
     /******** USUARIO ********/
 
     function renderFoods($producto, $categoria){
-        $this->smarty->assign('titulo', "Comidas :D");
+        $this->smarty->assign('titulo', " Todos los poductos:");
         $this->smarty->assign('producto', $producto);
         $this->smarty->assign('categoria', $categoria);
         $this->smarty->display('templates/productos.tpl');
@@ -54,7 +54,7 @@ class productosView{
     }
 
     function renderProductosAdmin($producto,$categoria,$logged){
-        $this->smarty->assign('titulo', "Productos");
+        $this->smarty->assign('titulo', "Tabla de productos");
         $this->smarty->assign('logged', $logged);
         $this->smarty->assign('producto', $producto);
         $this->smarty->assign('categoria', $categoria);

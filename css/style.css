@@ -1,0 +1,41 @@
+
+.titulo{
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 50px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center;
+  }
+  
+  .subtitulo{
+    color: #111; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 20px; 
+    font-weight: 300; 
+    line-height: 32px; 
+    margin: 0 0 50px; 
+    text-align: center;
+  }
+
+  
+.medio{
+    padding-top: 200px;
+}
+
+
+
+.formulario{
+    font-family: 'Amaranth', sans-serif;
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+.formulario-ul{
+    list-style: none;
+    padding: 0;
+}

@@ -2,25 +2,29 @@
 {include file='templates/header.tpl'}
 
 {if $message != ""}
+<div class="alert alert-danger text-center" role="alert">
     {$message}
+</div>   
 {/if}
-    
 
 
-<div>
-    <h1>{$titulo}</h1>
-      <form action="verificar" method="POST">
-        <div>
-
-          <label for="">Nombre: </label>
-            <input type="text" name="input_nombre">
-          <label for="">Contraseña: </label>
-            <input type="password" name="input_password">
-        </div>
-
-        <div>
-          <button>Iniciar sesion</button> <a href='registrarse'>REGISTRARSE</a> </td>
-        </div>
+<div class="spa">
+      <form class="formulario" action="verificar" method="POST">
+        <h1>{$titulo}</h1>
+        <ul class="formulario-ul">
+          <li>
+            <label for="">Nombre: </label>
+              <input class="form-control" type="text" name="input_nombre">
+          </li>
+          <li>
+            <label for="">Contraseña: </label>
+              <input class="form-control" type="password" name="input_password">
+          </li>
+          <li>
+            <button class="btn btn-primary">Iniciar sesion</button>
+            <button class="btn btn-light"> <a href='registrarse'>REGISTRARSE</a></button> </td>
+          </li>
+        </ul>
       </form>
 </div>
 

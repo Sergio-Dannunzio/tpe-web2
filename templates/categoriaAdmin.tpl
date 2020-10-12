@@ -3,25 +3,23 @@
 {if $logged == 1}
     
 
-{*AGREGAR*}
-    <h1 > Lista de Categorias</h1>
-    <form action="agregarCategoria" method="POST">
+    <h1 class="text-center">{$titulo}</h1>
+    <form class="formulario" action="agregarCategoria" method="POST">
         <div>
             <label for="input_categoria">Nombre</label>
-            <input name="input_categoria">
+            <input  class="form-control" name="input_categoria">
         </div>
-        <button type="submit" >Agregar</button>
+        <button class="btn btn-light" type="submit" >Agregar</button>
     </form>
 
 
-<table>
+<table class="table table-striped">
 {foreach from=$categoria item=categorias} 
 
          <tr> 
             <td>{$categorias->categoria}</td>
-            <td>{$categorias->id}</td>
-            <td> <a  href='eliminarCategoria/{$categorias->id}'>Eliminar</a> </td> 
-            <td> <a  href='editarCategoria/{$categorias->id}'>Editar</a> </td>
+            <td><button class="btn btn-outline-secondary"> <a  href='eliminarCategoria/{$categorias->id}'>Eliminar</a> </button></td> 
+            <td><button class="btn btn-outline-secondary"> <a  href='editarCategoria/{$categorias->id}'>Editar</a> </button></td>
         </tr>
 
 {/foreach}

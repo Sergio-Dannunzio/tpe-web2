@@ -4,20 +4,20 @@
 
 {if $logged==1}
     
-<div>
-    <h1> Lista de Productos</h1>
-    <form action="agregarProducto" method="POST">
+
+    <h1 class="text-center">{$titulo}</h1>
+    <form class="formulario" action="agregarProducto" method="POST">
         <div>
             <label for="nombre">Nombre</label>
-            <input  id="nombre" name="input_nombre">
+            <input class="form-control" id="nombre" name="input_nombre">
         </div>
         <div>
             <label for="descripcion">Descripcion</label>
-            <input name="input_descripcion" id="descripcion">
+            <input class="form-control" name="input_descripcion" id="descripcion">
         </div>
         <div>
             <label for="precio">Precio</label>
-            <input name="input_precio" id="precio">
+            <input class="form-control" name="input_precio" id="precio">
         </div>
         <div>
             <label for="nombre">Categoria</label>
@@ -33,35 +33,25 @@
 
           
         </div>
-        <button type="submit">Agregar</button>
+        <button class="btn btn-light" type="submit">Agregar</button>
     </form>
-</div>
 
 
 
 
-
-
-{*dluplica el producto*}
-
-<table>
-
-
-
-    <thead>
+<table class="table table-striped">
+    <thead  class="thead-dark">
         <tr>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
- 
-            <th>Nombre de categoria</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Nombre de categoria</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Editar</th>
  
             </tr>
     </thead>
-  
-
-
-
+ 
  {foreach from=$producto item=food} 
     
             <tr> 
@@ -71,8 +61,8 @@
                 <td>{$food->precio}</td>
                 <td>{$food->categoria}</td>
                 
-                <td> <a  href='borrar/{$food->id_producto}'>Eliminar</a> </td> 
-                <td> <a  href='editarProducto/{$food->id_producto}'>Editar</a> </td>
+                <td><button class="btn btn-outline-secondary"> <a  href='borrar/{$food->id_producto}'>Eliminar</a></button> </td> 
+                <td><button class="btn btn-outline-secondary"> <a  href='editarProducto/{$food->id_producto}'>Editar</a></button> </td>
               
             </tr>
             

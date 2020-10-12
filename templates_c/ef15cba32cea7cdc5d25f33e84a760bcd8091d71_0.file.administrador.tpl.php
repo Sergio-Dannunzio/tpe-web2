@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-07 19:56:31
+/* Smarty version 3.1.34-dev-7, created on 2020-10-11 20:18:19
   from 'C:\xampp\htdocs\web1\TP_ESPECIAL\templates\administrador.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f7e014fdddb03_05187877',
+  'unifunc' => 'content_5f834c6b50ab16_82660149',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef15cba32cea7cdc5d25f33e84a760bcd8091d71' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web1\\TP_ESPECIAL\\templates\\administrador.tpl',
-      1 => 1602083225,
+      1 => 1602440296,
       2 => 'file',
     ),
   ),
@@ -22,12 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f7e014fdddb03_05187877 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f834c6b50ab16_82660149 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
-<div >
+<?php if ($_smarty_tpl->tpl_vars['logged']->value == 1) {?>
+    
+<div class="text-center">
         <div>
             <h2>Lista de Productos</h2> 
             <a  href="allProductosAdmin">Todos los Productos</a>
@@ -39,6 +40,7 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
         </div>
 </div>
 
+<?php }?>
 
 <?php $_smarty_tpl->_subTemplateRender('file:templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

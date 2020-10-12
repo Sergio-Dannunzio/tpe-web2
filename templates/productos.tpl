@@ -1,15 +1,16 @@
 {include file='templates/header.tpl'}
-<h1>{$titulo}</h1>
+<h1 class="text-center">{$titulo}</h1>
 
 <table>
-    <tr>
-{foreach from=$categoria item=categories} 
-      <th><button class="btn btn-light"> <a href='categoria/{$categories->id}'>{$categories->categoria}</a></button> </th>
-{/foreach}
-    </tr>
+        <tr>
+    {foreach from=$categoria item=categories} 
+        <th><button class="btn btn-light"> <a href='categoria/{$categories->id}'>{$categories->categoria}</a></button> </th>
+    {/foreach}
+        </tr>
 </table>
 
-<table  class="table">
+ <div class="spa">
+<table class="table">
 
 
     <thead  class="thead-dark">
@@ -17,7 +18,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Precio</th>
-            <th scope="col">Nombre de categoria</th>
+            <th scope="col">Nombre de la categoria</th>
             <th scope="col">Ver detalle</th>
         </tr>
     </thead>
@@ -41,6 +42,7 @@
     {/foreach}
   
 </table>
+ </div>
 
 {include file='templates/footer.tpl'}
 

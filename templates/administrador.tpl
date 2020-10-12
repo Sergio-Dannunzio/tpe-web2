@@ -3,7 +3,7 @@
 
 {if $logged == 1}
     
-<div >
+<div class="text-center">
         <div>
             <h2>Lista de Productos</h2> 
             <a  href="allProductosAdmin">Todos los Productos</a>

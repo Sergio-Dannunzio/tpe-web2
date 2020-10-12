@@ -12,7 +12,7 @@ class usuarioView{
     }
 
     function showLogin($message = ""){
-        $this->smarty->assign('titulo', "Login ");
+        $this->smarty->assign('titulo', "Iniciar sesion");
         $this->smarty->assign('message', $message);
         $this->smarty->display('templates/formLogin.tpl');
     }
@@ -29,5 +29,5 @@ class usuarioView{
     }
 
 
-
+    
 }
