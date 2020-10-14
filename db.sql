@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2020 a las 23:07:31
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.6
+-- Tiempo de generación: 14-10-2020 a las 21:31:43
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,9 +37,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id`, `categoria`) VALUES
-(1, 'desayuno'),
-(2, 'almuerzo-cena'),
-(3, 'merienda');
+(1, 'Desayuno'),
+(2, 'Almuerzo-Cena'),
+(3, 'Merienda');
 
 -- --------------------------------------------------------
 
@@ -60,10 +60,9 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `descripcion`, `precio`, `id_categoria`) VALUES
-(64, 'rrr', 'r', 6, 1),
-(65, 'www', 'www', 33, 2),
-(69, 'tt', 'tt', 77, 2),
-(70, 'ergtg', 'qwqeew', 0, 1);
+(64, 'Tostadas', '', 30, 1),
+(65, 'hamburguesa completa', 'coca incluida', 400, 2),
+(69, 'tarta de frutilla', 'porcion', 80, 3);
 
 -- --------------------------------------------------------
 
@@ -83,7 +82,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `password`, `access`) VALUES
-(1, 'sergio@sergio.com', '$2y$10$RjD2M2/kUCcd08vJS8g.9OlvBD.rsRCg9knjBO6l01oqSZgmd3eI.', 1);
+(1, 'sergio@sergio.com', '$2y$10$RjD2M2/kUCcd08vJS8g.9OlvBD.rsRCg9knjBO6l01oqSZgmd3eI.', 1),
+(3, 'regi@regi.com', '$2y$10$9kbhjjU1/WX07Ga1TR5gOu6C5YMnqb/f8UciRet5UNYjAI.h./oUW', 1),
+(4, 'regina@regina.com', '$2y$10$DXNqW.BbUOWM6AZHohN/benUcwt.eFe2lK.vZexz6HX78Upv.Rzfu', 0);
 
 --
 -- Índices para tablas volcadas
@@ -116,19 +117,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas

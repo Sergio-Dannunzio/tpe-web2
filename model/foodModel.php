@@ -21,9 +21,7 @@ class foodModel{
 
     //producto con id
     function getID($id_producto){
-        // Construllo una sentencia
         $sentencia = $this->db->prepare("SELECT * FROM producto WHERE id_producto = ?");
-        // ejecuto la sentencia
         $sentencia->execute([$id_producto]);
         $producto= $sentencia->fetch(PDO::FETCH_OBJ);
         return $producto;

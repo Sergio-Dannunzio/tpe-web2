@@ -48,27 +48,25 @@ function verificar(){
 
         if(isset($usuario)){
             $usuarioDB = $this->model->getUser($usuario);
-            
 
             if(isset($usuarioDB) && $usuarioDB){
-                // Existe el usuario
+                
                 if (password_verify($password, $usuarioDB->password)){
                     session_start();
                         $_SESSION['id_usuario'] = $usuarioDB->id_usuario;
                         $_SESSION["input_nombre"] = $usuarioDB->usuario;
-                        $_SESSION['LAST_ACTIVITY'] = time();
-
                     header("Location: ".BASE_URL."administrador");
                 }else{
                     $this->view->showLogin("Contraseña incorrecta");
                 }
-
             }else{
-                // No existe el user en la DB
                 $this->view->showLogin("El usuario no existe");
             }
         }
     }
 
-}
 
+
+
+
+}

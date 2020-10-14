@@ -26,9 +26,7 @@ class categoriaModel{
     }
 
     function getID($id){
-        // Construllo una sentencia
         $sentencia = $this->db->prepare("SELECT * FROM categoria WHERE id = ?");
-        // ejecuto la sentencia
         $sentencia->execute([$id]);
         $categoria= $sentencia->fetch(PDO::FETCH_OBJ);
         return $categoria;

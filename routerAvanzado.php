@@ -11,10 +11,7 @@ define("LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].di
 define("LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 
 
-//define("THIS_URL", $_GET['action']);
-
 $r = new Router();
-
 
 
 //ADMIN
@@ -46,12 +43,12 @@ $r->addRoute("editarCategoria/:ID", "POST", "categoriaController", "editarCatego
 $r->addRoute("registrarse", "GET", "usuarioController", "registrarse");
 $r->addRoute("registrarse", "POST", "usuarioController", "iniciarSesion");
 
+
 $r->addRoute("login", "GET", "usuarioController", "login");
 
 $r->addRoute("logout", "GET", "usuarioController", "cerrarSesion");
 
 $r->addRoute("verificar", "POST", "usuarioController", "verificar");
-
 
 
 // rutas
