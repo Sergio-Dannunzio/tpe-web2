@@ -7,21 +7,23 @@
     <form action="editarProducto/{$producto->id_producto}" method="POST">
          <div>
             <label for="input_edit_nombre" >Nombre:</label>
-            <input class="form-control" name="input_edit_nombre" {$producto->nombre}>
+            <input class="form-control" name="input_edit_nombre" value={$producto->nombre}>
         </div>
             <label for="input_edit_descripcion">Descripcion:</label>
-            <input class="form-control"  name="input_edit_descripcion" {$producto->descripcion} >
+            <input class="form-control"  name="input_edit_descripcion" value={$producto->descripcion} >
         <div>   
              <label for="input_edit_precio">Precio:</label>
-            <input class="form-control" name="input_edit_precio"  {$producto->precio}>
+            <input class="form-control" name="input_edit_precio"  value={$producto->precio}>
         </div>  
         <div>
             <label for="categoriaUpdate">Categoria:</label>
            <select name="categoriaUpdate"> 
-                <option value="">Elegir</option>
 
                 {foreach from=$categoria item=categorias} 
-                    <option value="{$categorias->id}">{$categorias->categoria}</option>
+                <option {if $categorias->id_categoria == $producto->id_categoria}
+                    selected
+                {/if}</option>
+                    {**<option value="{$categorias->id}">{$categorias->categoria}</option>**}
                 {/foreach}
 
             </select>

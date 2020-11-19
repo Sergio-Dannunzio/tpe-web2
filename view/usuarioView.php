@@ -18,15 +18,25 @@ class usuarioView{
     }
 
 
-    function showRegistrarse(){
+    function showRegistrarse($message = ""){
         $this->smarty->assign('titulo', "Registrarse ");
+        $this->smarty->assign('message', $message);
         $this->smarty->display('templates/formRegistrarse.tpl');
     }
 
+    function renderUsuariosAdmin($usuarios,$logged){
+        $this->smarty->assign('titulo', "Todos los usuarios");
+        $this->smarty->assign('logged', $logged);
+        $this->smarty->assign('usuarios', $usuarios);
+        $this->smarty->display('templates/usuariosAdmin.tpl');
+    }
+
+    
     
     function ShowHomeLocation(){
-        header("Location: " . BASE_URL . "home");
+        header("Location: " . BASE_URL . "allUsuariosAdmin");
     }
+
 
 
     

@@ -14,7 +14,7 @@ define("LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].d
 $r = new Router();
 
 
-//ADMIN
+//Productos admin
 $r->addRoute("administrador", "GET", "foodController", "showAdmin");
 $r->addRoute("allProductosAdmin", "GET", "foodController", "showProductosAdmin");
 
@@ -27,7 +27,7 @@ $r->addRoute("editarProducto/:ID", "POST", "foodController", "editarProducto");
 
 
 
-//Categoria
+//Categoria admin
 $r->addRoute("allCategoriaAdmin", "GET", "categoriaController", "showCategoriasAdmin");
 
 $r->addRoute("agregarCategoria", "POST", "categoriaController", "agregarCategoria" );
@@ -38,21 +38,26 @@ $r->addRoute("editarCategoria/:ID", "GET", "categoriaController", "formEdit");
 $r->addRoute("editarCategoria/:ID", "POST", "categoriaController", "editarCategoria");
 
 
+//Usuario
+$r->addRoute("allUsuariosAdmin", "GET", "usuarioController", "showUsuariosAdmin");
 
-//registrarse
+$r->addRoute("eliminarUsuario/:ID", "GET", "usuarioController", "eliminarUsuario");
+
+$r->addRoute("asignarUsuario/:ID", "GET", "usuarioController", "asignarPermisosUsuario");
+$r->addRoute("quitarUsuario/:ID", "GET", "usuarioController", "quitarPermisosUsuario");
+
+//registrarse-login-logout
 $r->addRoute("registrarse", "GET", "usuarioController", "registrarse");
 $r->addRoute("registrarse", "POST", "usuarioController", "iniciarSesion");
-
 
 $r->addRoute("login", "GET", "usuarioController", "login");
 
 $r->addRoute("logout", "GET", "usuarioController", "cerrarSesion");
 
 $r->addRoute("verificar", "POST", "usuarioController", "verificar");
-
+$r->addRoute("verificarRegistrarse", "POST", "usuarioController", "verificarRegistrarse");
 
 // rutas
-
 $r->addRoute("home", "GET", "foodController", "showAll");
 $r->addRoute("todas", "GET", "foodController", "showAll");
 
