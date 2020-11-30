@@ -1,5 +1,7 @@
 <?php
 
+require_once './api/APIComentarioController.php';
+
 class APIView {
 
     public function response($data, $status) {
@@ -13,7 +15,7 @@ class APIView {
           200 => "OK",
           201 => "Created",
           404 => "Not found",
-          402 => "Not authorized",
+          401 => "Unauthorised",
           500 => "Internal Server Error"
         );
         return (isset($status[$code]))? $status[$code] : $status[500];

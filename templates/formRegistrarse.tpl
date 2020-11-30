@@ -21,9 +21,6 @@
             <input class="form-control" type="password" name="input_password">
           </li>
           <li>
-            <input type="radio" name="input_access" value="2<"> <label for="">Acepto terminos y condiciones</label>
-          </li>
-          <li>
             <button class="btn btn-primary">Iniciar sesion</button>
           </li>
       </ul>    

@@ -23,8 +23,8 @@
     <div class="alert alert-danger text-center" role="alert">
         <h1>Usuario normal</h1> 
     </div>
-    {else}
-        <h1 class="alert alert-warning text-center"> Logueate</h1>
+{else}
+    <h1 class="alert alert-warning text-center"> Logueate</h1>
 {/if}
 
 {include file='templates/footer.tpl'}

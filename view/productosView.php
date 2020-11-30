@@ -61,9 +61,11 @@ class productosView{
         $this->smarty->display('templates/productosAdmin.tpl');
     }
 
-    function renderDetalleProducto($producto){
+    function renderDetalleProducto($producto, $logged, $usuario){
         $this->smarty->assign('titulo', "Producto:");
+        $this->smarty->assign('logged', $logged);
         $this->smarty->assign('producto', $producto);
+        $this->smarty->assign('usuario', $usuario);
         $this->smarty->display('templates/productoDetalle.tpl');
     }
 

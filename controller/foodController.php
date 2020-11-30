@@ -38,9 +38,10 @@ class foodController{
 
     function showDetalle($params = null){
         $id_producto = $params[':ID'];
+        $logged= $this->getAccess();
         $producto= $this->model->showDetalleProducto($id_producto);
-        $this->view->renderDetalleProducto($producto); 
-
+        $usuario = $this->modelUser->getUsuarios();
+        $this->view->renderDetalleProducto($producto, $logged, $usuario); 
     }
 
 

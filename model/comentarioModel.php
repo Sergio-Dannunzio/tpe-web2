@@ -9,22 +9,23 @@ class comentarioModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db;charset=utf8', 'root', '');
     }
 
+
     function getComentarios(){
-        $sentencia = $this->db->prepare("SELECT * FROM comentario");
+        $sentencia = $this->db->prepare("SELECT * FROM comentario ");
         $sentencia->execute();
         $comentario = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $comentario;
     }
-
-    function getComentario($id_comentario){
-        $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE id_comentario=?");
-        $sentencia->execute(array($id_comentario));
-        return $sentencia->fetch(PDO::FETCH_OBJ);
+   
+    function getComentariosByFood($id_producto){
+        $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE id_producto = ?");
+        $sentencia->execute(array($id_producto));
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function insertarComentario($comentario,$puntaje){
-        $query = $this->db->prepare("INSERT INTO comentario(comentario,puntaje) VALUES(?,?)");
-        $query->execute(array($comentario,$puntaje));
+    function insertarComentario($comentario,$puntaje,$id_producto){
+        $query = $this->db->prepare("INSERT INTO comentario(comentario,puntaje,id_producto) VALUES(?,?,?)");
+        $query->execute(array($comentario,$puntaje,$id_producto));
     }
 
     function eliminarComentario($id_comentario){

@@ -28,7 +28,7 @@ class usuarioController{
     function iniciarSesion(){
         $usuario = $_POST['input_nombre'];
         $password = $_POST['input_password'];
-        $access = $_POST['input_access'];
+        $access = 2;
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
 

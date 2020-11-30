@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2020 a las 15:07:32
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.3.21
+-- Tiempo de generación: 30-11-2020 a las 15:34:34
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,7 +50,8 @@ INSERT INTO `categoria` (`id`, `categoria`) VALUES
 CREATE TABLE `comentario` (
   `id_comentario` int(11) NOT NULL,
   `comentario` varchar(255) NOT NULL,
-  `puntaje` int(11) NOT NULL
+  `puntaje` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -103,7 +104,8 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `password`, `access`) VALUES
 (22, 'regi', '$2y$10$naxlJh/TwaeSJTUON1lwmezNe3ov92Fd5in0wU6RTnnoPMUPMAijy', 2),
 (23, 'regiiina', '$2y$10$RuhszPCSlsaAvyen9E9lzOVP6GHOPyDlZ5kJbZ.0tUIEXYP7zil2y', 1),
 (24, 'regina1', '$2y$10$hqq3PY.IPGkupASgv/Xhn.FFrqR423OGRIVE8Coiv4FOUa/LwopXW', 2),
-(25, 'regina2', '$2y$10$B/K9NpLN2FW28C2tWbACne/cV9FXk1gwDyi1lrrBME9jrV4g8lGda', 2);
+(25, 'regina2', '$2y$10$B/K9NpLN2FW28C2tWbACne/cV9FXk1gwDyi1lrrBME9jrV4g8lGda', 2),
+(27, 'sergio12345@sergio.com', '$2y$10$t3O84wDihpfZXMjDux5dUOCsv6mH3fn8Bnp8RVXLe31uJEGjjYP52', 2);
 
 --
 -- Índices para tablas volcadas
@@ -119,7 +121,9 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  ADD PRIMARY KEY (`id_comentario`);
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `producto`
@@ -160,11 +164,17 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `producto`
