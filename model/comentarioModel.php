@@ -16,6 +16,12 @@ class comentarioModel{
         $comentario = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $comentario;
     }
+
+    function getComentario($id_comentario){
+        $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE id_comentario = ?");
+        $sentencia->execute(array($id_comentario));
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
    
     function getComentariosByFood($id_producto){
         $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE id_producto = ?");

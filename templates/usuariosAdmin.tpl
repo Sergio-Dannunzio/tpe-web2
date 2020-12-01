@@ -16,7 +16,6 @@
         {else}    
             <td><button type="submit" class="btn btn-outline-info"  name="input_cambiar_permisos"><a href='quitarUsuario/{$usuario->id_usuario}'>Quitar Permisos</a> </button></td>
         {/if}
-            {*<td><button class="btn btn-outline-secondary" type="submit" name="input_asignar"> <a  href='editarUsuario/{$usuario->id_usuario}'>Asignar Admin</a> </button></td>*}
         </div>
         </tr>
 {/foreach}

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     getComentarios();
 
-    document.getElementById("addComent").addEventListener('submit', e => {
+    document.getElementById("agregarComentario").addEventListener('submit', e => {
         e.preventDefault();
         addComentario();
     })
@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         for(let comentario of comentarios) {
             let data = {
                comentario: `${comentario.comentario}`,
-               puntaje:   `${comentario.puntaje}` 
+               puntaje:   `${comentario.puntaje}`,
+               id_producto: `${comentario.id_producto}`
             }
             array.push(data);
         }
@@ -89,8 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
         }
     }
-
-
 
     function eliminar(id) {
         fetch('api/borrarComentario' + "/"  + id, {

@@ -19,7 +19,9 @@
         </tr>
         <input type="hidden" name="idComentarioProducto" value="{$food->id_producto}">
     {/foreach}
+
 </table>
+
 {if $logged ge 1}
 <table  class="table table-sm text-center" >
     <thead >
@@ -32,21 +34,18 @@
         </tr>
     </thead>
 
-    {foreach from=$usuario item=user} 
-        <input type="hidden" name="idUsuario" value="{$user->id_usuario}">
-    {/foreach}
-
     <tbody id="crearComentarios">
     </tbody>
 </table>
 {/if}
+
 {if $logged ge 1}
     <section id="comentario">
             <ul class="tabla-comentarios">
             </ul>
     </section>
 
-        <form class="text-center" id="addComent"  method="post">
+        <form class="text-center" id="agregarComentario"  method="post">
           <label for="">Comentario:</label>
             <input type="text" name="comentario" placeholder="comentario">
             <label for="">Puntaje:</label>
@@ -61,8 +60,9 @@
 
             <button class="btn btn-light" type="submit">Agregar</button>
         </form>
+
 {else}
-    <h3 class="text-center"> Se necesita estar logueado</h3>
+    <h3 class="alert alert-warning text-center" class="text-center"> Se necesita estar logueado para poder ver los comentarios</h3>
 {/if}
 
 {if ($logged)}
@@ -72,4 +72,4 @@
 <a  href='home'>Volver</a> 
 <script src="./js/comentarios.js"></script>
 
-    {include file='templates/footer.tpl'}
+{include file='templates/footer.tpl'}

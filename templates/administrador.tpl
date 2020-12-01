@@ -20,7 +20,7 @@
 </div>
 
 {elseif $logged == 2}
-    <div class="alert alert-danger text-center" role="alert">
+    <div class="alert alert-danger text-center">
         <h1>Usuario normal</h1> 
     </div>
 {else}

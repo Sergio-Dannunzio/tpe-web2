@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-30 14:17:58
+/* Smarty version 3.1.34-dev-7, created on 2020-12-01 16:12:25
   from 'C:\xampp\htdocs\Practico1\TP_ESPECIAL\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc4f1061e20b9_91183209',
+  'unifunc' => 'content_5fc65d59cac4f7_99465849',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0beb2d3d41fcf9399abf1c18160f0c75e3a9338d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Practico1\\TP_ESPECIAL\\templates\\footer.tpl',
-      1 => 1602514762,
+      1 => 1606835544,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc4f1061e20b9_91183209 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc65d59cac4f7_99465849 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="text-center">
     <section class="medio">
@@ -46,9 +46,7 @@ function content_5fc4f1061e20b9_91183209 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
- src="js/bootstrap.js"><?php echo '</script'; ?>
->
+
 
 </body>
 </html><?php }

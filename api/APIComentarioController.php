@@ -15,16 +15,22 @@ class ApiComentarioController extends ApiController {
         $comentario = $this->model->getComentariosByFood($id_producto);
         $this->view->response($comentario, 200);
     }
+
+    public function getComentario($params = null) {
+        $id_comentario = $params[':ID'];
+        $comentario = $this->model->getComentario($id_comentario);
+        $this->view->response($comentario, 200);
+    }
     
     public function insertComentario($params = null){
         $body = $this->getData();
         $comentario = $body->comentario;
         $puntaje = $body->puntaje;
         $id_producto = $body->id_producto;
-        
+
         $id_comentario = $this->model->insertarComentario($comentario, $puntaje, $id_producto);
-        
-        if (!empty($id_comentario)){
+
+        if (!empty($comentario) && !empty($puntaje) ){
             $this->view->response( "El comentario se inserto correctamente", 201);
         }
         else{
@@ -35,15 +41,16 @@ class ApiComentarioController extends ApiController {
     
     public function deleteComentarios($params = null) {
         $id_comentario = $params[':ID'];
-        $result = $this->model->eliminarComentario($id_comentario);
-        
-        if($result > 0){
+        $comentario = $this->model->getComentario($id_comentario);
+
+        if(!empty($comentario)){
+            $this->model->eliminarComentario($id_comentario);
             $this->view->response("El comentario fue eliminado", 200);
-        }   
+        }
         else{
             $this->view->response("El comentario no existe", 404);
         }
-        
+
     }
 
 }

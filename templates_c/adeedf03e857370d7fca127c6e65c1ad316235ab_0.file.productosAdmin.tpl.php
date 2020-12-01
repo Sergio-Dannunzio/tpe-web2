@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-09 23:19:15
+/* Smarty version 3.1.34-dev-7, created on 2020-12-01 16:09:09
   from 'C:\xampp\htdocs\Practico1\TP_ESPECIAL\templates\productosAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f80d3d3176467_88247299',
+  'unifunc' => 'content_5fc65c95a09d93_64812403',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'adeedf03e857370d7fca127c6e65c1ad316235ab' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Practico1\\TP_ESPECIAL\\templates\\productosAdmin.tpl',
-      1 => 1602278353,
+      1 => 1602442396,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f80d3d3176467_88247299 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc65c95a09d93_64812403 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -30,20 +30,21 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 
 <?php if ($_smarty_tpl->tpl_vars['logged']->value == 1) {?>
     
-<div>
-    <h1> Lista de Productos</h1>
-    <form action="agregarProducto" method="POST">
+
+    <h1 class="text-center"><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
+</h1>
+    <form class="formulario" action="agregarProducto" method="POST">
         <div>
             <label for="nombre">Nombre</label>
-            <input  id="nombre" name="input_nombre">
+            <input class="form-control" id="nombre" name="input_nombre">
         </div>
         <div>
             <label for="descripcion">Descripcion</label>
-            <input name="input_descripcion" id="descripcion">
+            <input class="form-control" name="input_descripcion" id="descripcion">
         </div>
         <div>
             <label for="precio">Precio</label>
-            <input name="input_precio" id="precio">
+            <input class="form-control" name="input_precio" id="precio">
         </div>
         <div>
             <label for="nombre">Categoria</label>
@@ -68,34 +69,25 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
           
         </div>
-        <button type="submit">Agregar</button>
+        <button class="btn btn-light" type="submit">Agregar</button>
     </form>
-</div>
 
 
 
 
-
-
-
-<table>
-
-
-
-    <thead>
+<table class="table table-striped">
+    <thead  class="thead-dark">
         <tr>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
- 
-            <th>Nombre de categoria</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Nombre de categoria</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Editar</th>
  
             </tr>
     </thead>
-  
-
-
-
+ 
  <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['producto']->value, 'food');
 $_smarty_tpl->tpl_vars['food']->do_else = true;
@@ -114,10 +106,10 @@ $_smarty_tpl->tpl_vars['food']->do_else = false;
                 <td><?php echo $_smarty_tpl->tpl_vars['food']->value->categoria;?>
 </td>
                 
-                <td> <a  href='borrar/<?php echo $_smarty_tpl->tpl_vars['food']->value->id_producto;?>
-'>Eliminar</a> </td> 
-                <td> <a  href='editarProducto/<?php echo $_smarty_tpl->tpl_vars['food']->value->id_producto;?>
-'>Editar</a> </td>
+                <td><button class="btn btn-outline-secondary"> <a  href='borrar/<?php echo $_smarty_tpl->tpl_vars['food']->value->id_producto;?>
+'>Eliminar</a></button> </td> 
+                <td><button class="btn btn-outline-secondary"> <a  href='editarProducto/<?php echo $_smarty_tpl->tpl_vars['food']->value->id_producto;?>
+'>Editar</a></button> </td>
               
             </tr>
             
