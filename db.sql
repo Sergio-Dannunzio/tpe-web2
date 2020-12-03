@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2020 a las 15:34:34
+-- Tiempo de generación: 03-12-2020 a las 01:31:27
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -51,8 +51,20 @@ CREATE TABLE `comentario` (
   `id_comentario` int(11) NOT NULL,
   `comentario` varchar(255) NOT NULL,
   `puntaje` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comentario`, `comentario`, `puntaje`, `id_producto`) VALUES
+(27, 'asdasd', 5, 65),
+(28, 'asd', 3, 65),
+(34, 'asdasd', 3, 65),
+(35, 'asdddwa', 3, 65),
+(41, 'Un producto extremadamente delicioso', 5, 64),
+(42, 'sda', 4, 65);
 
 -- --------------------------------------------------------
 
@@ -73,7 +85,7 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `descripcion`, `precio`, `id_categoria`) VALUES
-(64, 'Tostadas', '', 30, 1),
+(64, 'Tostadas', 'Con manteca', 30, 1),
 (65, 'hamburguesa completa', 'coca incluida', 400, 2),
 (69, 'tarta de frutilla', 'porcion', 80, 3);
 
@@ -100,12 +112,7 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `password`, `access`) VALUES
 (4, 'regina@regina.com', '$2y$10$DXNqW.BbUOWM6AZHohN/benUcwt.eFe2lK.vZexz6HX78Upv.Rzfu', 0),
 (13, 'rrrrr', '12345', 1),
 (14, 'regina123', '$2y$10$YePpty43ssFfedlXhz74keszv6BDgFmjuo7GIbJZDXKlIRzEcN3j6', 1),
-(21, 'reginaa', '$2y$10$TzJwEoojNwy5iuKgIpqZE.ou70tVE80HMxEpZetjw/zOEjwutuycS', 1),
-(22, 'regi', '$2y$10$naxlJh/TwaeSJTUON1lwmezNe3ov92Fd5in0wU6RTnnoPMUPMAijy', 2),
-(23, 'regiiina', '$2y$10$RuhszPCSlsaAvyen9E9lzOVP6GHOPyDlZ5kJbZ.0tUIEXYP7zil2y', 1),
-(24, 'regina1', '$2y$10$hqq3PY.IPGkupASgv/Xhn.FFrqR423OGRIVE8Coiv4FOUa/LwopXW', 2),
-(25, 'regina2', '$2y$10$B/K9NpLN2FW28C2tWbACne/cV9FXk1gwDyi1lrrBME9jrV4g8lGda', 2),
-(27, 'sergio12345@sergio.com', '$2y$10$t3O84wDihpfZXMjDux5dUOCsv6mH3fn8Bnp8RVXLe31uJEGjjYP52', 2);
+(21, 'reginaa', '$2y$10$TzJwEoojNwy5iuKgIpqZE.ou70tVE80HMxEpZetjw/zOEjwutuycS', 1);
 
 --
 -- Índices para tablas volcadas
@@ -122,8 +129,7 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`id_comentario`),
-  ADD KEY `id_producto` (`id_producto`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD KEY `id_producto` (`id_producto`);
 
 --
 -- Indices de la tabla `producto`
@@ -152,7 +158,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
@@ -164,7 +170,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Restricciones para tablas volcadas

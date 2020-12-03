@@ -34,37 +34,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             array.push(data);
         }
-
-            if(comentarios.length != 0){
-                for(let comentario of comentarios){
-                    let boton = document.createElement("button");
-                    boton.innerText = "Borrar";
-                    boton.classList.add('btn');
-                    boton.classList.add('btn-danger');
-                    let nodotr = document.createElement("tr");
-
-                    let nodotd1 = document.createElement("td");
-                    let nodotd2 = document.createElement("td");
-                    let nodotd3 = document.createElement("td");
-                    nodotd1.innerHTML = `${comentario.comentario}`;
-                    nodotd2.innerHTML = `${comentario.puntaje}`;
-
-                    nodotr.id_comentario = `${comentario.id_comentario}`;
-                    if(logged == 1){
-                        boton.addEventListener("click", e => eliminar(comentario.id_comentario));            
-                        nodotr.appendChild(nodotd1);
-                        nodotr.appendChild(nodotd2);
-
-                        nodotd3.appendChild(boton);
-                        nodotr.appendChild(nodotd3);
-                    }else if(logged == 2){
-                        nodotr.appendChild(nodotd1);
-                        nodotr.appendChild(nodotd2);
-
-                    }
-                    body.appendChild(nodotr);        
+        for(let comentario of comentarios){
+            let boton = document.createElement("button");
+            boton.innerText = "Borrar";
+            boton.classList.add('btn');
+            boton.classList.add('btn-danger');
+            let nodotr = document.createElement("tr");
+            let nodotd1 = document.createElement("td");
+            let nodotd2 = document.createElement("td");
+            let nodotd3 = document.createElement("td");
+            nodotd1.innerHTML = `${comentario.comentario}`;
+            nodotd2.innerHTML = `${comentario.puntaje}`;
+            nodotr.id_comentario = `${comentario.id_comentario}`;
+            if(logged == 1){
+                boton.addEventListener("click", e => eliminar(comentario.id_comentario));            
+                nodotr.appendChild(nodotd1);
+                nodotr.appendChild(nodotd2);
+                nodotd3.appendChild(boton);
+                nodotr.appendChild(nodotd3);
+            }else if(logged == 2){
+                nodotr.appendChild(nodotd1);
+                nodotr.appendChild(nodotd2);
             }
-            }
+            body.appendChild(nodotr);        
+    }
     }
 
     function addComentario() {

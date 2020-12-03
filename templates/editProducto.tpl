@@ -20,10 +20,7 @@
            <select name="categoriaUpdate"> 
 
                 {foreach from=$categoria item=categorias} 
-                <option {if $categorias->id_categoria == $producto->id_categoria}
-                    selected
-                {/if}</option>
-                    {**<option value="{$categorias->id}">{$categorias->categoria}</option>**}
+                    <option value="{$categorias->id}">{$categorias->categoria}</option>
                 {/foreach}
 
             </select>
@@ -34,4 +31,4 @@
     </form>
 </div >
 
-   {include file="templates/footer.tpl"}
+{include file="templates/footer.tpl"}

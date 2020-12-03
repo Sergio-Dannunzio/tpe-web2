@@ -57,7 +57,7 @@
                     <option value="4">★★★★</option>
                     <option value="5">★★★★★</option>
             </select> 
-
+            
             <button class="btn btn-light" type="submit">Agregar</button>
         </form>
 
